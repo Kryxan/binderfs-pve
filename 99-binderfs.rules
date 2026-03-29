@@ -1,0 +1,5 @@
+KERNEL=="binder",     GROUP="binder", MODE="0660"
+KERNEL=="hwbinder",   GROUP="binder", MODE="0660"
+KERNEL=="vndbinder",  GROUP="binder", MODE="0660"
+KERNEL=="binder-control", GROUP="binder", MODE="0660"
+

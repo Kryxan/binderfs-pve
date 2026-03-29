@@ -1,0 +1,16 @@
+[Unit]
+Description=BinderFS mount and device creation
+After=local-fs.target
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe binder_linux
+ExecStart=/bin/mkdir -p /dev/binderfs
+ExecStart=/bin/mount -t binder binder /dev/binderfs
+ExecStart=/usr/local/sbin/binderfs-mkdevs
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
